@@ -13,13 +13,13 @@ def home():
   return "Hello World"
 
 # Add uniform route.
-#@app.route('/api/uniform')
-@app.route('/uniform')
+@app.route('/api/uniform')
+#@app.route('/uniform')
 def uniform():
   return {"value": np.random.uniform()}
 
 # Add normal route.
-#@app.route('/api/normal')
-@app.route('/normal')
+@app.route('/api/normal')
+#@app.route('/normal')
 def normal():
   return {"value": np.random.normal()}
