@@ -21,11 +21,7 @@ def uniform():
 def normal():
   return {"value": np.random.normal()}
 
-
-
-@app.route('/api/model/<int:w>')
-
-def model(w):
-    # Make the prediction using our model with w, w^2, w^3.
-    p = polyreg.predict([[w, w ** 2, w ** 3]])
-    return {"value": str(p[0])} # Object must be a string.
+# Add normal route.
+@app.route('/api/model')
+def model():
+  return {"value": np.random.normal()}
