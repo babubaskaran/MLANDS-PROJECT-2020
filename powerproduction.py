@@ -16,7 +16,7 @@ app = fl.Flask(__name__)
 # Add root route.
 @app.route("/")
 def home():
-  return app.send_static_file('index1.html')
+  return app.send_static_file('index3.html')
 
 # Add uniform route.
 #@app.route('/api/uniform')

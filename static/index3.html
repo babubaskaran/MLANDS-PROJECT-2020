@@ -18,25 +18,21 @@
     <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input class="form-control" id="output" type="text" placeholder="Forecasted Power" readonly>
+            <input class="form-control" id="poweroutput" type="text" placeholder="Forecasted Power" readonly>
           </div>
         </div>
         
         <div class="predict_power">
-
-            <p>Speed:</p>
+            <h5>Predicted power output for given wind speed:</h5>
+            <p>Wind Speed:</p>
             <div class="input-group mb-2">
-
+                
                 <input type="number" id="speed" class="form-control">
             </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-success" id="calculate-button">Calculate Power</button>
+            <div>
+                <button type="button" class="btn btn-primary" id = "calculate_power">Calculate Power</button>
             </div>
-            <div class="mb-2">
-                <p>Power Output:</p>
-                <input type="number" id="power_output">
-
-            </div>
+            
         </div>
     </div>
 
@@ -73,7 +69,7 @@
             
             $.post("/powerproduction", {"speed": speed})
                 .done(function( data ) {
-                    document.getElementById("power_output").value = data["value"];
+                    document.getElementById("poweroutput").value = data["value"];
             });
         });
     </script>
